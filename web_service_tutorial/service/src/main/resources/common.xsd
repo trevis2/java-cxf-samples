@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.ibc.srl/ws/donationservice/common"
+	targetNamespace="http://www.ibc.srl/ws/donationservice/common">
+	<xs:complexType name="BasicRequest">
+		<xs:sequence>
+			<xs:element name="token" type="xs:string" />
+			<xs:element name="id" type="xs:integer" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BasicResponse">
+		<xs:sequence>
+			<xs:element name="errorCode" type="xs:string" />
+			<xs:element name="errorMsg" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="GetDonationResponse">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tns:BasicResponse">
+					<xs:sequence>
+						<xs:element name="donazione" type="xs:string" />
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GetDonationRequest">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="tns:BasicRequest">
+					<xs:sequence>
+						<xs:element name="nome" type="xs:string" />
+						<xs:element name="cognome" type="xs:string" />
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

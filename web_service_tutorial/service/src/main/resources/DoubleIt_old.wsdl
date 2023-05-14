@@ -6,6 +6,7 @@
    xmlns:di="http://www.example.org/schema/DoubleIt"
    xmlns:tns="http://www.example.org/contract/DoubleIt"
    targetNamespace="http://www.example.org/contract/DoubleIt">
+   
    <wsdl:types>
       <xsd:schema targetNamespace="http://www.example.org/schema/DoubleIt">
          <xsd:element name="DoubleIt">

@@ -62,9 +62,9 @@
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>
-                                        ${basedir}/src/main/resources/DoubleIt.wsdl
+                                        ${basedir}/src/main/resources/Donation.wsdl
                                     </wsdl>
-                                    <wsdlLocation>classpath:DoubleIt.wsdl</wsdlLocation>
+                                    <wsdlLocation>classpath:Donation.wsdl</wsdlLocation>
                                 </wsdlOption>
                             </wsdlOptions>
                         </configuration>
@@ -76,7 +76,7 @@
             </plugin>
         </plugins>
         <!-- Name of the generated WAR file -->
-        <finalName>doubleit</finalName>
+        <finalName>donup</finalName>
     </build>
 
 </project>

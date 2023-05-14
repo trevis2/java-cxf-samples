@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<wsdl:definitions name="Donation"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://www.ibc.srl/ws/donationservice"
+	xmlns:com="http://www.ibc.srl/ws/donationservice/common"
+	targetNamespace="http://www.ibc.srl/ws/donationservice">
+	<wsdl:types>
+		<xsd:schema
+			xmlns:com="http://www.ibc.srl/ws/donationservice/common"
+			xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:import schemaLocation="common.xsd"
+				namespace="http://www.ibc.srl/ws/donationservice/common" />
+		</xsd:schema>
+	</wsdl:types>
+
+	<wsdl:message name="GetDonationRequest">
+		<wsdl:part element="com:GetDonationRequest"
+			name="GetDonationRequest" />
+	</wsdl:message>
+	<wsdl:message name="GetDonationResponse">
+		<wsdl:part element="com:GetDonationResponse"
+			name="GetDonationResponse" />
+	</wsdl:message>
+
+	<wsdl:portType name="DonationServicePortType">
+		<wsdl:operation name="GetDonation">
+			<wsdl:input message="tns:GetDonationRequest" />
+			<wsdl:output message="tns:GetDonationResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<wsdl:binding name="DonationServiceBinding"
+		type="tns:DonationServicePortType">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="GetDonation">
+			<soap:operation soapAction="" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+
+	<wsdl:service name="DonationService">
+		<wsdl:port name="DonationServicePort"
+			binding="tns:DonationServiceBinding">
+			<soap:address
+				location="http://localhost:8080/donup/services/doubleit" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
